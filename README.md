@@ -10,6 +10,8 @@ A clean, modern, and responsive personal portfolio website built to showcase my 
 
 This portfolio highlights my journey, technical expertise, and interests in data analytics, machine learning, and web development. It is designed with a focus on **clean UI, smooth user experience, and professional presentation**.
 
+Live link: https://lekshmipriya04.github.io/Personal-Portfolio/
+
 ---
 
 ##  Features
