@@ -9,28 +9,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
-  --bg: #f8fafc;            /* main background */
-  --bg2: #ffffff;          /* section background */
+  --bg: #f8fafc;
+  --bg2: #ffffff;
   --surface: #ffffff;      
   --surface2: #f1f5f9;
-
   --border: rgba(0, 0, 0, 0.08);
-
-  --accent: #6366f1;       /* elegant indigo */
-  --accent2: #0ea5e9;      /* soft blue */
+  --accent: #6366f1;
+  --accent2: #0ea5e9;
   --accent3: #f59e0b;
-
-  --text: #0f172a;         /* dark readable text */
+  --text: #0f172a;
   --text-muted: #475569;
   --text-dim: #94a3b8;
-
   --glow: rgba(99, 102, 241, 0.15);
 }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
     body {
       background: var(--bg);
       color: var(--text);
@@ -40,14 +34,12 @@
       overflow-x: hidden;
     }
 
-    /* ── GRID BG ── */
     .grid-bg {
-  background-image:
-    linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
-}
+      background-image:
+        linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+    }
 
-    /* ── NAV ── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -99,7 +91,6 @@
     .nav-links a:hover { color: var(--accent); }
     .nav-links a:hover::after { width: 100%; }
 
-    /* ── SECTIONS ── */
     section { position: relative; z-index: 1; }
 
     .container {
@@ -108,7 +99,7 @@
       padding: 0 3rem;
     }
 
-    /* ── HERO ── */
+    /* HERO */
     #hero {
       min-height: 100vh;
       display: flex;
@@ -241,7 +232,6 @@
       border-color: var(--accent);
     }
 
-    /* ── PHOTO CARD ── */
     .hero-photo-wrap {
       position: relative;
       opacity: 0;
@@ -253,36 +243,26 @@
       width: 380px;
       height: 460px;
       margin: 0 auto;
-      .photo-frame {
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
-}
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
     }
 
     .photo-frame::before {
-  content: '';
-  position: absolute;
-  inset: -2px; 
-  background: linear-gradient(
-    135deg,
-    var(--accent),
-    var(--accent2),
-    transparent 60%
-  );
-  border-radius: 4px;
-  z-index: -1;
-}
+      content: '';
+      position: absolute;
+      inset: -2px; 
+      background: linear-gradient(135deg, var(--accent), var(--accent2), transparent 60%);
+      border-radius: 4px;
+      z-index: -1;
+    }
 
     .photo-frame::after {
-  content: '';
-  position: absolute;
-  top: 18px;
-  left: 18px;
-  right: -18px;
-  bottom: -18px;
-  border: 1.5px solid rgba(0,0,0,0.1);
-  border-radius: 4px;
-  z-index: -2;
-}
+      content: '';
+      position: absolute;
+      top: 18px; left: 18px; right: -18px; bottom: -18px;
+      border: 1.5px solid rgba(0,0,0,0.1);
+      border-radius: 4px;
+      z-index: -2;
+    }
 
     .photo-inner {
       width: 100%;
@@ -296,74 +276,17 @@
     }
     
     .profile-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
-  border-radius: 4px;
-}
-
-    .photo-frame:hover {
-  transform: translateY(-6px);
-  transition: all 0.3s ease;
-  box-shadow: 0 30px 70px rgba(0,0,0,0.12);
-}
-          
-     .dot {
-  opacity: 0.3;
-}
-    /* Decorative avatar / placeholder */
-    .avatar-placeholder {
       width: 100%;
       height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      position: relative;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 4px;
     }
 
-    .avatar-initials-ring {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3.2rem;
-      font-weight: 600;
-      color: var(--bg);
-      position: relative;
-      box-shadow: 0 0 60px rgba(180,150,255,0.4);
-    }
-
-    .avatar-initials-ring::before {
-      content: '';
-      position: absolute;
-      inset: -6px;
-      border-radius: 50%;
-      border: 1px solid rgba(180,150,255,0.3);
-      animation: spin 8s linear infinite;
-    }
-
-    .avatar-initials-ring::after {
-      content: '';
-      position: absolute;
-      inset: -14px;
-      border-radius: 50%;
-      border: 1px dashed rgba(180,150,255,0.15);
-      animation: spin 14s linear infinite reverse;
-    }
-
-    .avatar-name-label {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      font-style: italic;
-      color: var(--text-muted);
-      text-align: center;
+    .photo-frame:hover {
+      transform: translateY(-6px);
+      transition: all 0.3s ease;
+      box-shadow: 0 30px 70px rgba(0,0,0,0.12);
     }
 
     .photo-badge {
@@ -380,12 +303,11 @@
       backdrop-filter: blur(10px);
     }
 
-    /* floating dots */
     .dot {
       position: absolute;
       border-radius: 50%;
       background: var(--accent);
-      opacity: 0.5;
+      opacity: 0.3;
       animation: pulse 3s ease-in-out infinite;
     }
 
@@ -393,7 +315,6 @@
     .dot-2 { width: 4px; height: 4px; bottom: 30%; right: -50px; animation-delay: 1s; background: var(--accent2); }
     .dot-3 { width: 5px; height: 5px; top: 40%; left: -35px; animation-delay: 0.5s; background: var(--accent3); }
 
-    /* ── SCROLL INDICATOR ── */
     .scroll-indicator {
       position: absolute;
       bottom: 2rem;
@@ -418,10 +339,8 @@
       animation: scrollBounce 2s ease-in-out infinite;
     }
 
-    /* ── SECTION HEADERS ── */
-    .section-header {
-      margin-bottom: 4rem;
-    }
+    /* SECTION HEADERS */
+    .section-header { margin-bottom: 4rem; }
 
     .section-eyebrow {
       font-family: 'DM Mono', monospace;
@@ -455,7 +374,7 @@
       color: var(--accent);
     }
 
-    /* ── ABOUT ── */
+    /* ABOUT */
     #about {
       padding: 8rem 0;
       background: var(--bg2);
@@ -541,10 +460,8 @@
       text-transform: uppercase;
     }
 
-    /* ── SKILLS ── */
-    #skills {
-      padding: 8rem 0;
-    }
+    /* SKILLS */
+    #skills { padding: 8rem 0; }
 
     .skills-grid {
       display: grid;
@@ -577,10 +494,7 @@
 
     .skill-category:hover::after { opacity: 1; }
 
-    .skill-cat-icon {
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-    }
+    .skill-cat-icon { font-size: 1.6rem; margin-bottom: 1rem; }
 
     .skill-cat-title {
       font-family: 'Outfit', sans-serif;
@@ -591,11 +505,7 @@
       margin-bottom: 1.2rem;
     }
 
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 
     .skill-tag {
       font-family: 'DM Mono', monospace;
@@ -614,7 +524,7 @@
       border-color: var(--accent);
     }
 
-    /* ── EDUCATION ── */
+    /* EDUCATION */
     #education {
       padding: 8rem 0;
       background: var(--bg2);
@@ -681,10 +591,167 @@
       line-height: 1.7;
     }
 
-    /* ── ACHIEVEMENTS ── */
-    #achievements {
+    /* ── PROJECTS ── */
+    #projects {
       padding: 8rem 0;
     }
+
+    .projects-category-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      margin-bottom: 1.8rem;
+      margin-top: 3.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .projects-category-label::before {
+      content: '';
+      width: 2.5rem;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .projects-category-label:first-of-type {
+      margin-top: 0;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 2.2rem;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      transition: opacity 0.3s;
+    }
+
+    .project-card.ml::before {
+      background: linear-gradient(to right, var(--accent), var(--accent2));
+    }
+
+    .project-card.web::before {
+      background: linear-gradient(to right, var(--accent2), var(--accent3));
+    }
+
+    .project-card:hover {
+      border-color: rgba(99, 102, 241, 0.2);
+      transform: translateY(-5px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.08);
+    }
+
+    .project-type-badge {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.7rem;
+      border-radius: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      width: fit-content;
+    }
+
+    .project-type-badge.ml {
+      background: rgba(99, 102, 241, 0.08);
+      color: var(--accent);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+    }
+
+    .project-type-badge.web {
+      background: rgba(14, 165, 233, 0.08);
+      color: var(--accent2);
+      border: 1px solid rgba(14, 165, 233, 0.2);
+    }
+
+    .project-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.25;
+    }
+
+    .project-desc {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      flex: 1;
+    }
+
+    .project-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 0.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .project-github-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: all 0.25s;
+    }
+
+    .project-github-link svg {
+      width: 14px; height: 14px;
+      flex-shrink: 0;
+      transition: transform 0.25s;
+    }
+
+    .project-github-link:hover {
+      color: var(--accent);
+    }
+
+    .project-github-link:hover svg {
+      transform: translateY(-1px);
+      stroke: var(--accent);
+    }
+
+    .project-card-icon {
+      position: absolute;
+      top: 1.4rem;
+      right: 1.6rem;
+      font-size: 1.4rem;
+      opacity: 0.15;
+      transition: opacity 0.3s;
+    }
+
+    .project-card:hover .project-card-icon {
+      opacity: 0.3;
+    }
+
+    /* ACHIEVEMENTS */
+    #achievements { padding: 8rem 0; }
 
     .achievement-card {
       background: var(--surface);
@@ -745,7 +812,7 @@
       opacity: 0.3;
     }
 
-    /* ── HOBBIES ── */
+    /* HOBBIES */
     #interests {
       padding: 8rem 0;
       background: var(--bg2);
@@ -806,10 +873,8 @@
       letter-spacing: 0.1em;
     }
 
-    /* ── CONTACT ── */
-    #contact {
-      padding: 8rem 0 6rem;
-    }
+    /* CONTACT */
+    #contact { padding: 8rem 0 6rem; }
 
     .contact-inner {
       display: grid;
@@ -849,7 +914,6 @@
       border: 1px solid var(--border);
       text-decoration: none;
       transition: all 0.3s;
-      group: true;
     }
 
     .contact-link:hover {
@@ -868,13 +932,9 @@
       flex-shrink: 0;
     }
 
-    .contact-link-icon svg {
-      width: 16px; height: 16px;
-    }
+    .contact-link-icon svg { width: 16px; height: 16px; }
 
-    .contact-link-info {
-      flex: 1;
-    }
+    .contact-link-info { flex: 1; }
 
     .contact-link-label {
       font-family: 'DM Mono', monospace;
@@ -891,9 +951,7 @@
       transition: color 0.3s;
     }
 
-    .contact-link:hover .contact-link-value {
-      color: var(--accent);
-    }
+    .contact-link:hover .contact-link-value { color: var(--accent); }
 
     .contact-link-arrow {
       color: var(--text-dim);
@@ -906,7 +964,7 @@
       color: var(--accent);
     }
 
-    /* ── FOOTER ── */
+    /* FOOTER */
     footer {
       padding: 2rem 0;
       border-top: 1px solid var(--border);
@@ -924,7 +982,7 @@
 
     footer span { color: var(--accent); }
 
-    /* ── ANIMATIONS ── */
+    /* ANIMATIONS */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(24px); }
       to { opacity: 1; transform: translateY(0); }
@@ -950,7 +1008,7 @@
       50% { transform: scaleY(0.6); opacity: 0.4; }
     }
 
-    /* ── SCROLL REVEAL ── */
+    /* SCROLL REVEAL */
     .reveal {
       opacity: 0;
       transform: translateY(30px);
@@ -962,7 +1020,7 @@
       transform: translateY(0);
     }
 
-    /* ── RESPONSIVE ── */
+    /* RESPONSIVE */
     @media (max-width: 900px) {
       nav { padding: 1.2rem 2rem; }
       .nav-links { display: none; }
@@ -974,6 +1032,7 @@
       .about-grid { grid-template-columns: 1fr; gap: 3rem; }
       .stat-grid { grid-template-columns: 1fr 1fr; }
       .skills-grid { grid-template-columns: 1fr 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
       .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
       .container { padding: 0 1.5rem; }
       .hero-photo-wrap { order: -1; }
@@ -982,6 +1041,7 @@
     @media (max-width: 600px) {
       .skills-grid { grid-template-columns: 1fr; }
       .hobbies-flex { flex-direction: column; }
+      .projects-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -996,6 +1056,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#achievements">Achievements</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -1020,9 +1081,9 @@
 
         <div class="hero-photo-wrap">
           <div class="photo-frame">
-           <div class="photo-inner">
+            <div class="photo-inner">
               <img src="my_photo.jpeg" alt="Lekshmi Priya" class="profile-img">
-           </div>
+            </div>
             <div class="photo-badge">Data Analyst · Developer</div>
           </div>
           <div class="dot dot-1"></div>
@@ -1171,6 +1232,96 @@
     </div>
   </section>
 
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">Showcase</div>
+        <h2 class="section-title">Projects & <em>Work</em></h2>
+      </div>
+
+      <!-- Machine Learning -->
+      <div class="projects-category-label reveal">Machine Learning</div>
+      <div class="projects-grid">
+
+        <div class="project-card ml reveal">
+          <div class="project-card-icon">🛡️</div>
+          <span class="project-type-badge ml">ML · Deep Learning</span>
+          <div class="project-title">Credit Card Fraud Detection System</div>
+          <div class="project-desc">
+            An end-to-end Machine Learning and Deep Learning based Fraud Detection System designed to identify fraudulent credit card transactions in real time. Combines advanced preprocessing, imbalance handling techniques, multiple predictive models, and a deployed Streamlit application for interactive predictions.
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/lekshmipriya04/Credit-Card-Fraud-Detection-System" target="_blank" rel="noopener" class="project-github-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
+              </svg>
+              View on GitHub
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card ml reveal">
+          <div class="project-card-icon">🔥</div>
+          <span class="project-type-badge ml">ML · Classification</span>
+          <div class="project-title">Wildfire Risk Classification System</div>
+          <div class="project-desc">
+            Applies supervised machine learning to classify wildfire risk levels across geographic regions using real-world satellite and meteorological data. Three models — SVM, Random Forest, and XGBoost — were trained, evaluated, and compared, with XGBoost identified as the best-performing model for production use.
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/lekshmipriya04/Wildfire-Risk-CLassification" target="_blank" rel="noopener" class="project-github-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
+              </svg>
+              View on GitHub
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Web Development -->
+      <div class="projects-category-label reveal">Web Development</div>
+      <div class="projects-grid">
+
+        <div class="project-card web reveal">
+          <div class="project-card-icon">🌤️</div>
+          <span class="project-type-badge web">JavaScript · API</span>
+          <div class="project-title">Weather Dashboard</div>
+          <div class="project-desc">
+            A modern, responsive weather application that provides real-time weather data and a 5-day forecast for cities worldwide. Built with JavaScript and the OpenWeatherMap API, featuring a clean UI designed for an intuitive user experience across all devices.
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/lekshmipriya04/Weather-Dashboard" target="_blank" rel="noopener" class="project-github-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
+              </svg>
+              View on GitHub
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card web reveal">
+          <div class="project-card-icon">🖥️</div>
+          <span class="project-type-badge web">HTML · CSS · JS</span>
+          <div class="project-title">Personal Portfolio</div>
+          <div class="project-desc">
+            A clean, modern, and responsive personal portfolio website built to showcase skills, education, and achievements as a Data Analyst & Web Developer. Designed with a focus on elegant typography, smooth animations, and a structured presentation of professional work.
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/lekshmipriya04/Personal-Portfolio" target="_blank" rel="noopener" class="project-github-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
+              </svg>
+              View on GitHub
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ACHIEVEMENTS -->
   <section id="achievements">
     <div class="container">
@@ -1200,16 +1351,6 @@
       </div>
       <div class="hobbies-flex">
         <div class="hobby-card reveal">
-          <span class="hobby-emoji">🏸</span>
-          <div class="hobby-name">Badminton</div>
-          <div class="hobby-desc">Agility · Strategy · Focus</div>
-        </div>
-        <div class="hobby-card reveal">
-          <span class="hobby-emoji">🏋️‍♀️</span>
-          <div class="hobby-name">Gym & Fitness</div>
-          <div class="hobby-desc">Discipline · Strength · Wellness</div>
-        </div>
-        <div class="hobby-card reveal">
           <span class="hobby-emoji">📊</span>
           <div class="hobby-name">Data Exploration</div>
           <div class="hobby-desc">Curiosity · Patterns · Insights</div>
@@ -1218,6 +1359,11 @@
           <span class="hobby-emoji">💻</span>
           <div class="hobby-name">Web Building</div>
           <div class="hobby-desc">Design · Code · Create</div>
+        </div>
+        <div class="hobby-card reveal">
+          <span class="hobby-emoji">🏸</span>
+          <div class="hobby-name">Badminton</div>
+          <div class="hobby-desc">Agility · Strategy · Focus</div>
         </div>
       </div>
     </div>
@@ -1240,7 +1386,6 @@
         </div>
 
         <div class="contact-links reveal">
-          <!-- Email -->
           <a href="mailto:lekshmi04priya@gmail.com" class="contact-link">
             <div class="contact-link-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5">
@@ -1255,7 +1400,6 @@
             <div class="contact-link-arrow">→</div>
           </a>
 
-          <!-- LinkedIn -->
           <a href="https://www.linkedin.com/in/lekshmi-priya-m-r-70b517290" target="_blank" rel="noopener" class="contact-link">
             <div class="contact-link-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent2)" stroke-width="1.5">
@@ -1270,7 +1414,6 @@
             <div class="contact-link-arrow">→</div>
           </a>
 
-          <!-- GitHub -->
           <a href="https://github.com/lekshmipriya04" target="_blank" rel="noopener" class="contact-link">
             <div class="contact-link-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent3)" stroke-width="1.5">
@@ -1294,10 +1437,9 @@
   </footer>
 
   <script>
-    // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setTimeout(() => {
             entry.target.classList.add('visible');
@@ -1308,8 +1450,7 @@
     }, { threshold: 0.12 });
     reveals.forEach(el => observer.observe(el));
 
-    // Stagger sibling reveals
-    document.querySelectorAll('.skills-grid, .stat-grid, .hobbies-flex, .contact-links').forEach(parent => {
+    document.querySelectorAll('.skills-grid, .stat-grid, .hobbies-flex, .contact-links, .projects-grid').forEach(parent => {
       const children = parent.querySelectorAll('.reveal');
       children.forEach((child, i) => {
         child.style.transitionDelay = `${i * 80}ms`;
